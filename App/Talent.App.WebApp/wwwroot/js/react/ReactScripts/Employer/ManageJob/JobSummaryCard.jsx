@@ -1,11 +1,12 @@
 ﻿import React from 'react';
 import Cookies from 'js-cookie';
-import { Popup } from 'semantic-ui-react';
+import { Popup, Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Card } from 'semantic-ui-react';
 import moment from 'moment';
+
 
 export class JobSummaryCard extends React.Component {
     constructor(props) {
-        super(props);
+        super(props); 
         this.selectJob = this.selectJob.bind(this)
     }
 
@@ -15,5 +16,13 @@ export class JobSummaryCard extends React.Component {
     }
 
     render() {
+        return (
+            <div>
+                <h3>{this.props.title}</h3>
+                <p>{this.props.location.country}, {this.props.location.city}</p> 
+                <p>{this.props.summary}</p>
+            </div>
+            )
+        
     }
 }
