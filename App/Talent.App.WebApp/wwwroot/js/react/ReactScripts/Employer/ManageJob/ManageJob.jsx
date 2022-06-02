@@ -118,24 +118,26 @@ export default class ManageJob extends React.Component {
                 <div className="ui container">
                     <h2>List of Jobs </h2>
                     <div style={{ 'display': 'flex' }, {'flexDirection': 'column' }}>
+                         
+                        {(this.state.loadJobs.length) ?
 
+                            <Card.Group itemsPerRow={3}>
+                                {
+                                    (this.state.loadJobs.map((job) =>
 
-                    {(this.state.loadJobs.length) ?
+                                        <JobSummaryCard
+                                            key={job.id}
+                                            title={job.title}
+                                            summary={job.summary}
+                                            location={job.location}
+                                        />))
 
-
-                        (this.state.loadJobs.map((job) => (
-                            <JobSummaryCard
-                                key={job.id}
-                                title={job.title}
-                                summary={job.summary}
-                                location={job.location}
-
-                            />
-                        ))
-
-                        )
-                        :
-                        <h2> No Active Jobs</h2>}
+                                }
+                             </Card.Group>
+                             
+                            :
+                                    <h2> No Jobs Found</h2>}
+                    
 
                    </div>
                     

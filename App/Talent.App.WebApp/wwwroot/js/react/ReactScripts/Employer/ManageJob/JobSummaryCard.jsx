@@ -16,13 +16,27 @@ export class JobSummaryCard extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                <h3>{this.props.title}</h3>
-                <p>{this.props.location.country}, {this.props.location.city}</p> 
-                <p>{this.props.summary}</p>
-            </div>
+        return ( 
+                <Card>  
+                   <Card.Content>
+                        <Card.Header>{this.props.title}</Card.Header>
+                        <Card.Meta>
+                            <span className='date'>{this.props.location.country}, {this.props.location.city}</span>
+                        </Card.Meta>
+                        <Card.Description>
+                            {this.props.summary}
+                        </Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                        <a>
+                            <Icon name='user' />
+                            22 Friends
+                       </a>
+                    </Card.Content> 
+                </Card>
             )
+                
+               
         
     }
 }
