@@ -61,7 +61,7 @@ export default class ManageJob extends React.Component {
         var cookies = Cookies.get('talentAuthToken'); 
        // your ajax call and other logic goes here
         $.ajax({
-            url: 'http://localhost:51689/listing/listing/getEmployerJobs',
+            url: 'https://ramaatalentservicestalent.azurewebsites.net/listing/listing/getEmployerJobs',
             headers: {
                 'Authorization': 'Bearer ' + cookies,
                 'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ export default class ManageJob extends React.Component {
 
                 if (res.myJobs) {
                     myjobsdata = res.myJobs;
-                    console.log("myjobsdata", myjobsdata);
+                    console.log("myjobsdata is...", myjobsdata);
                     this.setState({ loadJobs: res.myJobs });
                     console.log(this.state.loadJobs);
                 } else {
